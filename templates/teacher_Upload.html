@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Uploads</title>
+    <link rel="stylesheet" href="/style/teacher_Upload.css">
+</head>
+<body>
+
+
+    <div class="section">
+
+        <!--- welcoming message --->
+    <div class="welcoming">
+        <h1>Welcome Professor</h1>
+    </div>
+
+    <div class="upload-container">
+        <div class="welcoming"><h3>Welcome Professor</h3></div>
+        <h1>Upload Lessons</h1>
+        <!-- Upload form -->
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Enter file title" class="input-title" required>
+            <label for="file-upload" class="custom-file-upload">
+                Choose File
+            </label>
+            <input id="file-upload" type="file" name="file" required>
+            <button type="submit" class="upload-button">Upload</button>
+        </form>
+
+        <!-- Search bar for files -->
+        <div class="search-bar">
+            <input type="text" id="fileSearch" placeholder="Search for a file by title" oninput="filterFiles()">
+        </div>
+
+        <!-- List of uploaded files -->
+        <h2>Uploaded Files</h2>
+        <ul id="fileList" class="file-list">
+            <!-- Files will be dynamically loaded here -->
+        </ul>
+
+        <!-- A button to view all files -->
+        <button id="viewAllFiles" class="view-link">View All Files</button>
+
+        <!-- Modal for displaying all uploaded files -->
+        <div id="allFilesModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>All Uploaded Files</h2>
+                <ul id="allFileList" class="file-list">
+                    <!-- All files will be dynamically loaded here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/static/teacher_Upload.js"></script>
+</body>
+</html>

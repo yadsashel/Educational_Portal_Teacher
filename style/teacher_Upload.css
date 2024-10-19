@@ -1,0 +1,183 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../assets/Images/pexels-emre-keskinol-837719-1718345.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background in place while scrolling */
+    background-position: center;
+    min-height: 100vh; /* Ensures it covers the entire viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    width: 80%; /* Set the width of the container */
+    max-width: 1200px; /* Optional: Set a max width */
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Optional: Rounded corners */
+    backdrop-filter: blur(3px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for depth */ 
+}
+
+.upload-container {
+    margin-right: 20px;
+
+}
+
+
+/* Welcoming header styles */
+.welcoming {
+    width: 100%; /* Full width to cover the container */
+    text-align: center; /* Center text */
+    position: sticky; /* Fixed positioning */
+    top: 0; /* Fix to the top of the container */
+    background-color: #ffffff; /* Background color */
+    padding: 1rem 0; /* Padding for spacing */
+    z-index: 10; /* Ensure it appears above other content */
+    margin-bottom: 40px; /* Space below the header */
+    border-radius: 20px;
+}
+
+.welcoming h3 {
+    font-size: 1.6rem;
+    color: #087c80;
+    transform: scale(1.05);
+}
+
+.welcoming h3:hover {
+    color: #4546a8;
+    transform: scale(1.05);
+}
+
+
+h1, h2 {   
+    color: #c77700;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+    transform: scale(1.05)
+}
+
+.upload-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.upload-button:hover {
+    background-color: #218838;
+    transform: scale(1.05)
+}
+
+/* Uploaded files list */
+.file-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.file-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-list li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-list li button:hover {
+    background-color: #c82333;
+}
+
+/* Search bar styling */
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Download button styles */
+.download-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none; /* No border */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; /* Transition for hover effect */
+    font-size: 14px; /* Adjust font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.download-button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Style for the button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    align-items: center; /* Vertically align */
+    gap: 10px; /* Space between buttons */
+}
+
+.view-link {
+    background-color: #2b7dd4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-link:hover{
+    background-color: #3885d6;
+    transform: scale(1.05)
+}

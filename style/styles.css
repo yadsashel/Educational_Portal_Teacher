@@ -1,0 +1,280 @@
+/* Reset padding and margin */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}  
+
+/* Full-body background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../assets/Images/pexels-emre-keskinol-837719-1718345.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Keeps the background in place while scrolling */
+    background-position: center;
+    min-height: 100vh; /* Ensures it covers the entire viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Frosted glass effect for content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Shadow for depth */
+    color: #e6dfdf; /* White text for contrast */
+    text-align: center; /* Centered text */
+}
+
+/* Navigation bar */
+header {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent navbar */
+    padding: 20px;
+    margin-bottom: 300px;
+    width: 100%; /* Full width */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 200px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff9800;
+}
+
+header nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #ff9800;
+    background-position: center;
+    filter: blur(8px);
+    position: relative;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    color: #e7e0e0;
+}
+
+.content h1 {
+    font-size: 64px;
+    font-weight: bold;
+    color: #e6e0d9;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #ffffff;
+    color: #4CAF50;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Uploaded lessons section */
+.uploaded {
+    margin-top: 50px;
+}
+
+.uploaded h3 {
+    font-size: 19px;
+    color: #e7e7e7;
+    margin-top: -100px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.file-list {
+    list-style: none;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.file-list li {
+    background-color: rgba(240, 240, 240, 0.8); /* Semi-transparent background */
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.file-list li button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.file-list li button:hover {
+    background-color: #ff0000;
+}
+
+/* About Page */
+.about-us {
+    margin: 200px;
+    padding: 100px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.about-us h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2b2222;
+}
+
+.about-us p {
+    text-align: center;
+    font-size: large;
+}
+
+/* Contact Page */
+.contact-me {
+    margin: 200px;
+    padding: 100px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.contact-me h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2b2222;
+}
+
+.contact-me p {
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+}
+
+.contact-me p strong {
+    color: #302c2c;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Download button styles */
+.download-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none; /* No border */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; /* Transition for hover effect */
+    font-size: 14px; /* Adjust font size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.download-button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale effect */
+}
