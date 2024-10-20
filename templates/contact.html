@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/styles.css') }}">
 </head>
 <body>
 
-           <!-- Navigation bar -->
+    <!-- Navigation bar -->
     <header>
         <nav>
             <ul>
-                <li><a href="./student_view.html">Home</a></li>
-                <li><a href="../templates/About.html">About</a></li>
-                <li><a href="../templates/contact.html">Contact Us</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
             </ul>
         </nav>
     </header>    
     
-      <!-- Contact Section -->
-      <section id="contact" class="contact-me">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-me">
         <h1>Contact Me</h1>
         <p>If you have any questions or concerns, please contact the professor at: <strong>hattabou.fpt@gmail.com</strong></p>
         <p>For further assistance, feel free to reach out.</p>

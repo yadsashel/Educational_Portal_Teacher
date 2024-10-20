@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Fetch the uploaded files from the server
-    fetch('http://127.0.0.1:5000/files') // Ensure you're calling the correct endpoint
+    fetch('/files') // Ensure this URL matches your Flask route
         .then(response => response.json())
         .then(data => {
             displayLessons(data.files);

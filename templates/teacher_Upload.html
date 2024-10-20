@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professor Uploads</title>
-    <link rel="stylesheet" href="/style/teacher_Upload.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/teacher_Upload.css') }}">
 </head>
 <body>
 
@@ -55,6 +55,6 @@
         </div>
     </div>
     </div>
-    <script src="/static/teacher_Upload.js"></script>
+    <script src="{{ url_for('static', filename='teacher_Upload.js') }}"></script>
 </body>
 </html>

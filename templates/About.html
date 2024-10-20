@@ -4,27 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="../style/styles.css">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='Css/styles.css') }}">
 </head>
 <body>
 
-         <!-- Navigation bar -->
+    <!-- Navigation bar -->
     <header>
         <nav>
             <ul>
-                <li><a href="./student_view.html">Home</a></li>
-                <li><a href="../templates/About.html">About</a></li>
-                <li><a href="../templates/contact.html">Contact Us</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
             </ul>
         </nav>
     </header>    
     
-        <!-- About Section -->
-        <section id="about" class="about-us">
-            <h1>About This Platform</h1>
-            <p>This platform allows students to view lessons and files uploaded by the teacher. It’s easy to navigate and helps students keep up with their coursework.</p>
-        </section>
+    <!-- About Section -->
+    <section id="about" class="about-us">
+        <h1>About This Platform</h1>
+        <p>This platform allows students to view lessons and files uploaded by the teacher. It's easy to navigate and helps students keep up with their coursework.</p>
+    </section>
 
 </body>
 </html>

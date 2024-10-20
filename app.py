@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
 from config import get_db_connection
 from flask_cors import CORS
@@ -11,6 +11,16 @@ UPLOAD_FOLDER = 'static/uploads/'
 # Ensure upload folder exists
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
+
+# Route for serving CSS files (not necessary if you use url_for)
+@app.route('/css/<path:filename>')
+def serve_css(filename):
+    return send_from_directory('Css', filename)
+
+# Route for the home page
+@app.route('/')
+def home():
+    return render_template('student_view.html')
 
 # Route for uploading files
 @app.route('/upload', methods=['GET', 'POST'])
@@ -37,11 +47,15 @@ def get_files():
     files = fetch_all_files()  # Fetch from database
     return jsonify({'files': files})
 
-# Route for students to view files
-@app.route('/view')
-def student_view():
-    files = fetch_all_files()  # Fetch from database
-    return render_template('student_view.html', files=files)
+# Route for about page
+@app.route('/about')
+def about():
+    return render_template('About.html')
+
+# Route for contact page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 # Function to store file information in the database
 def store_file_in_db(file_name):
@@ -63,4 +77,4 @@ def fetch_all_files():
     return files
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
