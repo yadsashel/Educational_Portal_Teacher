@@ -17,7 +17,6 @@ if not os.path.exists(UPLOAD_FOLDER):
 def serve_css(filename):
     return send_from_directory('Css', filename)
 
-
 # Route for the teacher upload page
 @app.route('/upload', methods=['GET', 'POST'])
 def teacher_upload():
@@ -35,19 +34,13 @@ def teacher_upload():
             store_file_in_db(file.filename)  # Store file in the database
             return jsonify({'success': True, 'message': 'File uploaded successfully'})
 
-    return render_template('teacher_Upload.html')
+    return render_template('teacher_upload.html')
 
 # Route to fetch uploaded files
 @app.route('/files')
 def get_files():
     files = fetch_all_files()  # Fetch from database
     return jsonify({'files': files})
-
-# Route for about page
-@app.route('/about')
-def about():
-    return render_template('About.html')
-
 
 # Function to store file information in the database
 def store_file_in_db(file_name):
@@ -67,11 +60,6 @@ def fetch_all_files():
     cursor.close()
     conn.close()
     return files
-
-# Route for the teacher view (update if needed)
-@app.route('/teacher')
-def teacher_view():
-    return render_template('teacher_Upload.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
