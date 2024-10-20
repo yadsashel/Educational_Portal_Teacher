@@ -34,7 +34,7 @@ def teacher_upload():
             store_file_in_db(file.filename)  # Store file in the database
             return jsonify({'success': True, 'message': 'File uploaded successfully'})
 
-    return render_template('teacher_upload.html')
+    return render_template('teacher_Upload.html')
 
 # Route to fetch uploaded files
 @app.route('/files')
