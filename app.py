@@ -17,10 +17,6 @@ if not os.path.exists(UPLOAD_FOLDER):
 def serve_css(filename):
     return send_from_directory('Css', filename)
 
-# Route for the home page (student view)
-@app.route('/')
-def home():
-    return render_template('student_view.html')
 
 # Route for the teacher upload page
 @app.route('/upload', methods=['GET', 'POST'])
@@ -52,10 +48,6 @@ def get_files():
 def about():
     return render_template('About.html')
 
-# Route for contact page
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
 
 # Function to store file information in the database
 def store_file_in_db(file_name):
