@@ -39,7 +39,7 @@ def teacher_upload():
             store_file_in_db(file.filename)  # Store file in the database
             return jsonify({'success': True, 'message': 'File uploaded successfully'})
 
-    return render_template('teacher_upload.html')
+    return render_template('teacher_Upload.html')
 
 # Route to fetch uploaded files
 @app.route('/files')
@@ -79,7 +79,7 @@ def fetch_all_files():
 # Route for the teacher view (update if needed)
 @app.route('/teacher')
 def teacher_view():
-    return render_template('teacher_upload.html')
+    return render_template('teacher_Upload.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
