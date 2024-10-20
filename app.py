@@ -17,12 +17,12 @@ if not os.path.exists(UPLOAD_FOLDER):
 def serve_css(filename):
     return send_from_directory('Css', filename)
 
-# Route for the home page
+# Route for the home page (student view)
 @app.route('/')
 def home():
     return render_template('student_view.html')
 
-# Route for uploading files
+# Route for the teacher upload page
 @app.route('/upload', methods=['GET', 'POST'])
 def teacher_upload():
     if request.method == 'POST':
@@ -75,6 +75,11 @@ def fetch_all_files():
     cursor.close()
     conn.close()
     return files
+
+# Route for the teacher view (update if needed)
+@app.route('/teacher')
+def teacher_view():
+    return render_template('teacher_upload.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
